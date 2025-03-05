@@ -1,0 +1,226 @@
+<?php
+include_once("website_connect.php");
+
+// Define expected responses for different color vision deficiencies
+$expectedResponses = array(
+    'normal' => 9,
+    'protanopia' => 5,
+    'deuteranopia' => 7,
+    // Add more deficiency types as needed
+);
+
+// Check if the form was submitted
+if (isset($_GET['response']) || isset($_GET['submit1']) || isset($_GET['submit2'])) {
+    // Get the user's response
+    $userResponse = isset($_GET['response']) ? $_GET['response'] : ($_GET['submit1'] ? 'Nothing' : 'Not Sure');
+
+    // Determine the color vision deficiency based on the user's response
+    $deficiency = 'normal';
+    $minDifference = PHP_INT_MAX;
+    foreach ($expectedResponses as $type => $expectedResponse) {
+        $difference = abs($userResponse == 'Nothing' || $userResponse == 'Not Sure' ? PHP_INT_MAX : ($userResponse - $expectedResponse));
+        if ($difference < $minDifference) {
+            $deficiency = $type;
+            $minDifference = $difference;
+            // Define alternative colors
+            $alternative_colors = [
+                'primary_color' => '#FFC080', // Replace with a more distinguishable color for protanopia
+                'secondary_color' => '#8BC34A', // Replace with a more distinguishable color for protanopia
+            ];
+            echo "Based on your response, your detected color vision deficiency is: $deficiency<br>";
+            $background_color = $alternative_colors[$deficiency];
+            // Output JSON response
+            echo json_encode(array('background_color' => $background_color));
+            // Generate CSS with alternative colors
+            $css = '';
+            foreach ($alternative_colors as $key => $color) {
+                $css .= ".$key { color: $color; }<br>";
+            }
+            file_put_contents('alternative_colors.css', $css);
+            // Include CSS with alternative colors in HTML
+            echo "<link rel='stylesheet' type='text/css' href='alternative_colors.css'>";
+        }
+    }
+}
+?>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+2nd Format to try
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+<?php
+include_once("website_connect.php");
+
+// Define expected responses for different color vision deficiencies
+$expectedResponses = array(
+    'normal' => 9,
+    'protanopia' => 5,
+    'deuteranopia' => 7,
+    // Add more deficiency types as needed
+);
+
+// Check if the form was submitted
+if (isset($_GET['response']) || isset($_GET['submit1']) || isset($_GET['submit2'])) {
+    // Get the user's response
+    $userResponse = isset($_GET['response']) ? $_GET['response'] : ($_GET['submit1'] ? 'Nothing' : 'Not Sure');
+
+    // Determine the color vision deficiency based on the user's response
+    $deficiency = 'normal';
+    $minDifference = PHP_INT_MAX;
+    foreach ($expectedResponses as $type => $expectedResponse) {
+        $difference = abs($userResponse == 'Nothing' || $userResponse == 'Not Sure' ? PHP_INT_MAX : ($userResponse - $expectedResponse));
+        if ($difference < $minDifference) {
+            $deficiency = $type;
+            $minDifference = $difference;
+            // Define alternative colors
+            $alternative_colors = [
+                'primary_color' => '#FFC080', // Replace with a more distinguishable color for protanopia
+                'secondary_color' => '#8BC34A', // Replace with a more distinguishable color for protanopia
+            ];
+            echo "Based on your response, your detected color vision deficiency is: $deficiency<br>";
+            $background_color = $alternative_colors[$deficiency];
+            // Output JSON response
+            header('Content-Type: application/json');
+            echo json_encode(array('background_color' => $background_color));
+            // Generate CSS with alternative colors
+            $css = '';
+            foreach ($alternative_colors as $key => $color) {
+                $css .= ".$key { color: $color; }<br>";
+            }
+            file_put_contents('alternative_colors.css', $css);
+            // Include CSS with alternative colors in HTML
+            echo "<link rel='stylesheet' type='text/css' href='alternative_colors.css'>";
+            exit;
+        }
+    }
+}
+?>
+--------------------------------------------------------------------------------------------------------------------------------------------------
+3rd saved format:
+--------------------------------------------------------------------------------------------------------------------------------------------------
+<?php
+
+// Include the website connection file
+include_once("website_connect.php");
+
+// Define expected responses for different color vision deficiencies
+$expectedResponses = array(
+    'normal' => 9,
+    'protanopia' => 5,
+    'deuteranopia' => 7,
+    // Add more deficiency types as needed
+);
+
+// Check if the form was submitted
+if (isset($_GET['response']) || isset($_GET['submit1']) || isset($_GET['submit2'])) {
+    // Get the user's response
+    $userResponse = isset($_GET['response']) ? $_GET['response'] : ($_GET['submit1'] ? 'Nothing' : 'Not Sure');
+
+    // Determine the color vision deficiency based on the user's response
+    $deficiency = 'normal';
+    $minDifference = PHP_INT_MAX;
+    foreach ($expectedResponses as $type => $expectedResponse) {
+        $difference = abs($userResponse == 'Nothing' || $userResponse == 'Not Sure' ? PHP_INT_MAX : ($userResponse - $expectedResponse));
+        if ($difference < $minDifference) {
+            $deficiency = $type;
+            $minDifference = $difference;
+            // Define alternative colors
+            $alternative_colors = [
+                'primary_color' => '#FFC080', // Replace with a more distinguishable color for protanopia
+                'secondary_color' => '#8BC34A', // Replace with a more distinguishable color for protanopia
+            ];
+            echo "Based on your response, your detected color vision deficiency is: $deficiency<br>";
+            $background_color = $alternative_colors[$deficiency];
+            // Output JSON response
+            header('Content-Type: application/json');
+            echo json_encode(array('background_color' => $background_color));
+            // Generate CSS with alternative colors
+            $css = '';
+            foreach ($alternative_colors as $key => $color) {
+                $css .= ".$key { color: $color; }<br>";
+            }
+            // Write CSS to file
+            if (file_put_contents('alternative_colors.css', $css) === false) {
+                // Handle error
+                echo "Error writing to file: alternative_colors.css";
+            }
+            // Include CSS with alternative colors in HTML
+            echo "<link rel='stylesheet' type='text/css' href='alternative_colors.css'>";
+            exit;
+        }
+    }
+}
+?>
+-----------------------------------------------------------------------------------------------------------------------------
+4th draft - works: 
+-----------------------------------------------------------------------------------------------------------------------------
+<?php
+// Include the website connection file
+include_once("website_connect.php");
+
+// Define expected responses for different color vision deficiencies
+$expectedResponses = array(
+    'normal' => 9,
+    'protanopia' => 5,
+    'deuteranopia' => 7,
+    // Add more deficiency types as needed
+);
+
+// Check if the form was submitted
+if (isset($_GET['response']) || isset($_GET['submit1']) || isset($_GET['submit2'])) {
+    // Get the user's response
+    $userResponse = isset($_GET['response']) ? $_GET['response'] : ($_GET['submit1'] ? 'Nothing' : 'Not Sure');
+
+    // Determine the color vision deficiency based on the user's response
+    $deficiency = 'normal';
+    $minDifference = PHP_INT_MAX;
+    foreach ($expectedResponses as $type => $expectedResponse) {
+        $difference = abs($userResponse == 'Nothing' || $userResponse == 'Not Sure' ? PHP_INT_MAX : ($userResponse - $expectedResponse));
+        if ($difference < $minDifference) {
+            $deficiency = $type;
+            $minDifference = $difference;
+        }
+    }
+
+    // Define alternative colors
+    $alternative_colors = array(
+        'normal' => array(
+            'primary_color' => '#000000', // Default colors
+            'secondary_color' => '#FFFFFF'
+        ),
+        'protanopia' => array(
+            'primary_color' => '#FFC080', // Replace with a more distinguishable color for protanopia
+            'secondary_color' => '#8BC34A' // Replace with a more distinguishable color for protanopia
+        ),
+        'deuteranopia' => array(
+            'primary_color' => '#FF0000', // Replace with a more distinguishable color for deuteranopia
+            'secondary_color' => '#00FF00' // Replace with a more distinguishable color for deuteranopia
+        )
+        // Add more deficiency types and alternative colors as needed
+    );
+
+    // Output HTML with updated styles
+    echo '<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Color Blindness Test Result</title>
+        <style>
+            body {
+                background-color: ' . $alternative_colors[$deficiency]['primary_color'] . ';
+                color: ' . $alternative_colors[$deficiency]['secondary_color'] . ';
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Color Blindness Test Result</h1>
+        <p>Based on your response, your detected color vision deficiency is: ' . $deficiency . '</p>
+        <h1>Color Blindness Result</h1>
+        <br><br>
+        <button><a href="accessibility_test.php">Take Test Again</a></button>
+        <br><br><br>
+        <button><a href="accessibility_test_result.php">Email yourself a copy! </a></button>
+        <br><br><br>
+        <button><a href="home.php">Back to Home </a></button>
+    </body>
+    </html>';
+    exit;
+}
+?>

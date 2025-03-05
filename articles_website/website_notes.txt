@@ -1,0 +1,27 @@
+<li><a href="home.php">Home</a></li>
+      <li><a href="display_articles.php">View articles</a></li>
+	    <li><a href="manage_articles.php">Manage articles</a></li>
+      <li><a href="add_articles_form.php">Add articles</a></li>
+      <li><a href="edit_articles_form.php">Modify articles</a></li>
+      <li><a href="delete_articles_form.php">Remove articles</a></li>
+      <li><a href="contact_us.php">Contact Us</a></li>
+      <li><a href="display_queries.php">Display Contacted User's List</a></li>
+      <li><a href="website_survey_forum.php">Display Surveys</a></li>
+      <li><a href="manage_reviews.php">Manage Reviews</a></li>
+      <li><a href="add_reviews_form.php">Add Reviews</a></li>
+      <li><a href="display_reviews_form.php">Display Reviews</a></li>
+      <li><a href="delete_reviews_form.php">Remove Reviews</a></li>
+      <li><a href="modify_reviews.php">Modify Reviews</a></li>
+	    <li><a href="login_form.php">Login</a></li>
+	    <li><a href="signup_form.php">Register</a></li>
+      <li><a href="dashboard.php">Dashboard</a></li>
+      <li><a href="display_surveys.php">Display Surveys</a></li>
+      <li><a href="manage_surveys.php">Manage Surveys</a></li>
+      <li><a href="insert_surveys.php">Add Surveys</a></li>
+      <li><a href="update_surveys.php">Modify Surveys</a></li>
+      <li><a href="remove_surveys.php">Delete Surveys</a></li>
+      <li><a href="search_form.php">Search Form Here</a></li>
+      <li><a href="advance_search_form.php">Advance Search Form Here</a></li>
+      <li><a href="website_log.php">Website Log</a></li>
+
+      website_surveys = website_reviews:
