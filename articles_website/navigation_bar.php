@@ -37,8 +37,19 @@ include("website_connect.php");
             <a class="nav-link" href="display_articles.php">View Articles</a>
           </li>
           <!-- For Managing Articles -->
-          <li class="nav-item">
-            <a class="nav-link" href="manage_articles.php">Manage Articles</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Manage Articles
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="add_articles_form.php">Create</a></li>
+              <li><a class="dropdown-item" href="edit_articles_form.php">Update</a></li>
+              <li><a class="dropdown-item" href="display_articles.php">Read</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="delete_articles_form.php">Delete</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact_us.php">Contact Us</a>

@@ -1,7 +1,7 @@
 <?php
 //session_start();
      require("website_connect.php");
-     include("webapi.php");
+     //include("webapi.php");
 ?>
 <!Doctype html>
 <html lang="en">
@@ -30,7 +30,7 @@
                 <tbody>
             <?php
             // select query:
-            $sql_display = "Select * from `articles_locations`";
+            $sql_display = "Select * from `articles_location`";
             $result = mysqli_query($website_connect, $sql_display);
             while($row = mysqli_fetch_assoc($result)){
                 $id=  $row['id'];
@@ -54,5 +54,6 @@
             <!-- Display message here: -->
             <button id="" class= "btn btn-outline-light"><a href="manage_articles.php">Looking for Adding/Modify/Deleting Articles! Click here:</a></button>
             <br><br>
+            <button><a href="home.php">Back to Main</a</button>
     </body>
 </html>

@@ -2,9 +2,9 @@
      include("website_connect.php"); // to connect it to the database:
      include("navigation_bar.php"); // to connect to navigation bar:
      include("webapi.php");
-     include("locations.php");
-     include("advance_search_form.php"); 
-     include("search_form.php");
+//     include("locations.php");
+//     include("advance_search_form.php"); 
+//     include("search_form.php");
 ?>
 <!Doctype html>
 <html lang="en" id="">

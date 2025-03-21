@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
      include("website_connect.php");
      include("navigation_bar.php");
 	include("access_level.php"); // to check user's login status:
@@ -22,14 +22,16 @@ session_start();
 		 <!-- Instruction statement below: -->
 		 <p><i>In here you will be able to contact me using the form below:</i></p>
 		 <div class="container my-5">
-		     <form id="form2" method= "post" action= "queries_or_questions.php">
+		     <form id="form2" method= "post" action= "insert_query.php">
 			     <!-- Let's add additional methods here: -->
 				 <label for="user_contacted">Your Full User Name</label>
 				 <input type= "text" name= "user_contacted" placeholder="Enter your full name" autocomplete="off" required>
 				 <br><br>
 				 <label for="query_or_question">What is Your Query About</label>
 				 <br>
-				 <textarea rows="1" cols="22"></textarea>
+				 <textarea rows="1" cols="22">
+					<input type="text" name="query_or_question" placeholder="issue, concerns" autocomplete="off" required>
+				 </textarea>
 				 <br><br>
 				 <label for="query_type">Query Type<label>
 				 <input type="text" name="query_type" placeholder="urgent" autocomplete="off" required>

@@ -3,7 +3,7 @@
      $dbhost = "localhost";
      $dbusername = "root";
      $dbpassword = "";
-     $dbname = "ci4project";
+     $dbname = "6cs028_advanced_web";
      // connect query:
      $website_connect =  mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname);
      // Connect to server/database
@@ -13,4 +13,5 @@
 		  }else{
 			//echo "connected successfully! "; // connected successfully!
 		  }
-?>
+
+      ?>
