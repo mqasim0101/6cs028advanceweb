@@ -1,7 +1,8 @@
 <?php
 session_start();
-     require_once("website_connect.php");
+     include("website_connect.php");
      include("navigation_bar.php");
+     include("access_level.php");
 ?>
 <!Doctype html>
 <html lang="en">

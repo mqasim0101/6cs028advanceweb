@@ -2,7 +2,7 @@
 //session_start();
     include("website_connect.php");
     include("navigation_bar.php");
-    include("index.php");
+    include("access_level.php");
     // 
     //$id = $_POST['id'];
     if($_SERVER["REQUEST_METHOD"] == "POST" || (isset($_POST['delete']))){

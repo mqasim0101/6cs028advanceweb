@@ -25,5 +25,6 @@ session_start();
 		 Hello <?php echo $user_data['user_name'];?>
 		 <br><br><br>
 		 <button><a href="account_info.php">Account Info</a></button>
+		 <?php header("Location: home.php");?>
 	 </body>
 </html>

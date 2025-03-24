@@ -1,9 +1,8 @@
 <?php
-//session_start();
+session_start();
      include("website_connect.php");
      include("navigation_bar.php");
-	include("access_level.php"); // to check user's login status:
-	include("bootstrap.php");
+	 include("access_level.php");
 ?>
 <DOCTYPE html!>
 <html lang="en">
@@ -29,9 +28,7 @@
 				 <br><br>
 				 <label for="query_or_question">What is Your Query About</label>
 				 <br>
-				 <textarea rows="1" cols="22">
-					<input type="text" name="query_or_question" placeholder="issue, concerns" autocomplete="off" required>
-				 </textarea>
+				 <input type="text" name="query_or_question" placeholder="issue, concerns" autocomplete="off" required>
 				 <br><br>
 				 <label for="query_type">Query Type<label>
 				 <input type="text" name="query_type" placeholder="urgent" autocomplete="off" required>

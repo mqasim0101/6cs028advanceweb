@@ -6,7 +6,7 @@ session_start(); // This is to get the user's ID checked:
         // let's declare some variables here:
         $article_name = $_POST['article_name'];
         $article_overview = $_POST['article_overview'];
-        $article_description = $_POST['article_description'];
+        $article_description = trim($_POST['article_description']);
         $article_author = $_POST['article_author'];
         // Checks to see if the variables are not empty or number:
         if(!empty($article_name) && !empty($article_overview) && !empty($article_description) && !empty($article_author) && !is_numeric($article_name) && !is_numeric($article_overview)){

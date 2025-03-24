@@ -2,7 +2,6 @@
 session_start();
      require_once("website_connect.php");
      include("functions.php");
-     include("navigation_bar.php");
      //require("access_level.php");
 	 $_SESSION;
 	 // This is to check if the details entered using the post format:

@@ -1,10 +1,8 @@
 <?php
 //error_reporting(0);
 session_start();
-      //require("access_level.php");
 	  include("navigation_bar.php");
 	  include("website_connect.php");
-	  include("bootstrap.php");
 ?>
 <!Doctype html>
 <html>

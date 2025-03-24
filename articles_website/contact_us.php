@@ -1,8 +1,7 @@
 <?php
 session_start();
-      include("website_connect.php");
-	include("navigation_bar.php");
-	include("bootstrap.php");
+    include("website_connect.php");
+    include("navigation_bar.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -2,9 +2,7 @@
 //error_reporting(0);
 session_start();
       require("website_connect.php");
-      //include("access_level.php");
 	  include("navigation_bar.php");
-	  include("bootstrap.php");
 ?>
 <!Doctype html>
 <html>

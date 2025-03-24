@@ -1,8 +1,8 @@
 <?php
 session_start();
      include("website_connect.php");
-     include("access_level.php");
      include("navigation_bar.php");
+     include("access_level.php");
 ?>
 <!Doctype html>
 <html lang="en">
@@ -26,16 +26,16 @@ session_start();
             <form name="form1" action="add_articles.php" method="post">
                 <!-- All form fields start from here: -->
                 <label>Article Name: </label>
-                <input type="text" name="article_name" autocomplete = "off">
+                <input type="text" name="article_name" autocomplete = "off" required>
                 <br><br>
                 <label>Article Overview: </label>
-                <input type="text" name="article_overview" autocomplete = "off">
+                <input type="text" name="article_overview" autocomplete = "off" required>
                 <br><br>
-                <label>Article Description: </label>
-                <textarea rows="5" columns="10" placeholder="As much as details as possible"></textarea>
+                <label for="article_description">Article Description: </label>
+                <textarea id="article_description" name="article_description" rows="5" columns="10" required></textarea>
                 <br><br>
                 <label>Article Author: </label>
-                <input type="text" name="article_author" autocomplete = "off">
+                <input type="text" name="article_author" autocomplete = "off" required>
                 <br><br>
                 <!-- Buttons here below: -->
                 <button type="submit" class="btn btn-primary" name="submit4">Submit</button>
