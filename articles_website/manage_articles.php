@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include_once("website_connect.php"); // to connect it to the database:
 include("access_level.php"); // user access level
 include("navigation_bar.php"); // to connect it to the navigation bar:
@@ -11,8 +11,41 @@ include("navigation_bar.php"); // to connect it to the navigation bar:
     <html>
 
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Display & Manage articles: </title>
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Optional Custom CSS for additional responsiveness -->
+        <style>
+            /* Custom responsive table styles */
+            @media (max-width: 768px) {
+                .table-responsive-stack tr {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    margin-bottom: 1rem;
+                    border: 1px solid #ddd;
+                }
+
+                .table-responsive-stack td {
+                    display: block;
+                    text-align: right;
+                }
+
+                .table-responsive-stack td:before {
+                    content: attr(data-label);
+                    float: left;
+                    font-weight: bold;
+                }
+            }
+        </style>
     </head>
 
     <body>
@@ -64,6 +97,7 @@ include("navigation_bar.php"); // to connect it to the navigation bar:
         <button class="btn btn-outline-warning"><a href="edit_articles_form.php">Modify Articles</a></button>
         <button class="btn btn-outline-danger"><a href="delete_articles_form.php">Delete Articles</a></button>
         <br><br>
+        <button class="btn btn-outline-secondary"><a href="home.php">Back to the Main Page:</a></button>
     </body>
 
     </html>
