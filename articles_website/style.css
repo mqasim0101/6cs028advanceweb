@@ -5,9 +5,15 @@
 	box-sizing: border-box;
 }
 
-/* Style the navigation bar */
+/* Style the Main navigation bar */
 .navbar {
-	background-color: #333;
+	background-color: black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: black;
+	padding: 15px 20px;
+	width: 0px;
 }
 
 .navbar ul {
@@ -15,43 +21,156 @@
 	padding: 0;
 	margin: 0;
 	text-align: center;
+	display: flex;
 }
 
 /* To make the navbar horizontal */
 .navbar ul li {
 	display: inline-block;
 	/* Align items horizontally */
+	margin-left: 20px;
 }
 
 .navbar ul li a {
 	display: block;
 	padding: 10px 20px;
 	text-decoration: none;
-	color: white;
+	color: blue;
 	font-size: 16px;
 }
 
 /* Optional: Adding hover effect */
 .navbar ul li a:hover {
-	background-color: #575757;
+	background-color: #ffd700;
 }
-
+/* For the main body of the page */
 html {
 	width: 100%;
 	border: 0px;
+	background-color: black;
 }
 
-/* Base styles for mobile */
-body {
-	font-size: 16px;
-	padding: 10px;
+/* Base styles for mobile Including Table design */
+@media (min-width: 320px) {
+	body {
+		font-size: 10px;
+		padding: 5px;
+		margin: 0px;
+		margin-right: 0px;
+		width: 100%;
+		font-family: Arial, sans-serif;
+	}
+
+	.table-responsive-stack tr {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		margin-bottom: 1rem;
+		border: 1px solid #ddd;
+		width: 75%;
+	}
+
+	.table-responsive-stack td {
+		display: block;
+		text-align: right;
+		width: 100%;
+	}
+
+	.table-responsive-stack td:before {
+		content: attr(data-label);
+		float: left;
+		font-weight: bold;
+		width: 75%;
+	}
+
+	/* Style the navigation bar */
+	.navbar {
+		background-color: blue;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: grey;
+		padding: 10 15px;
+		width: 100%;
+	}
+
+	.navbar ul {
+		list-style-type: none;
+		padding: 5px;
+		margin: 0;
+		text-align: left;
+		display: flex;
+	}
+
+	/* To make the navbar horizontal */
+	.navbar ul li {
+		display: inline-block;
+		/* Align items horizontally */
+		margin-left: 10px;
+	}
+
+	.navbar ul li a {
+		display: block;
+		padding: 10px;
+		text-decoration: none;
+		color: blue;
+		font-size: 12px;
+	}
+
+	/* Optional: Adding hover effect */
+	.navbar ul li a:hover {
+		background-color: #ffd845;
+	}
 }
 
 /* Styles for tablets and larger screens */
-@media (min-width: 768px) {
+@media (min-width: 600px) {
 	body {
 		font-size: 18px;
 		padding: 20px;
+	}
+
+	/* Style the navigation bar */
+	.navbar {
+		background-color: blue;
+		display: flex;
+		justify-content: space-between;
+		align-items: left;
+		color: grey;
+		padding: 10 15px;
+		width: 0px;
+	}
+
+	.navbar ul {
+		list-style-type: none;
+		padding: 5px;
+		margin: 0;
+		text-align: left;
+		display: flex;
+	}
+
+	/* To make the navbar horizontal */
+	.navbar ul li {
+		display: inline-block;
+		/* Align items horizontally */
+		margin-left: 10px;
+	}
+
+	.navbar ul li a {
+		display: block;
+		padding: 10px;
+		text-decoration: none;
+		color: blue;
+		font-size: 12px;
+	}
+
+	/* Optional: Adding hover effect */
+	.navbar ul li a:hover {
+		background-color: #ffd845;
 	}
 }
 
@@ -60,4 +179,104 @@ body {
 		font-size: 20px;
 		padding: 30px;
 	}
+
+	/* Style the navigation bar */
+	.navbar {
+		background-color: blue;
+		display: flex;
+		justify-content: space-between;
+		align-items: left;
+		color: grey;
+		padding: 10 15px;
+		width: 0px;
+	}
+
+	.navbar ul {
+		list-style-type: none;
+		padding: 5px;
+		margin: 0;
+		text-align: left;
+		display: flex;
+	}
+
+	/* To make the navbar horizontal */
+	.navbar ul li {
+		display: inline-block;
+		/* Align items horizontally */
+		margin-left: 10px;
+	}
+
+	.navbar ul li a {
+		display: block;
+		padding: 10px;
+		text-decoration: none;
+		color: blue;
+		font-size: 12px;
+	}
+
+	/* Optional: Adding hover effect */
+	.navbar ul li a:hover {
+		background-color: #ffd845;
+	}
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 600px) {
+	.navbar {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.nav-ul {
+		flex-direction: column;
+		margin-top: 15px;
+	}
+
+	.nav-ul li {
+		margin: 10px 0;
+	}
+}
+
+/* Custom responsive table styles */
+@media (max-width: 768px) {
+	.table-responsive-stack tr {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		margin-bottom: 1rem;
+		border: 1px solid #ddd;
+		width: 100%;
+	}
+
+	.table-responsive-stack td {
+		display: block;
+		text-align: right;
+		width: 100%;
+	}
+
+	.table-responsive-stack td:before {
+		content: attr(data-label);
+		float: left;
+		font-weight: bold;
+		width: 75%;
+	}
+}
+/**/
+#suggestions {
+	border: 1px solid #ccc;
+	display: none;
+	position: absolute;
+	background: white;
+	z-index: 1000;
+}
+.suggestion-item {
+	padding: 10px;
+	cursor: pointer;
+}
+.suggestion-item:hover {
+	background-color: #f0f0f0;
 }

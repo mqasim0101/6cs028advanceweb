@@ -17,6 +17,9 @@ include("access_level.php");
     <title>Add articles Form: </title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- for Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script> <!-- Link to your external JavaScript file -->
 
     <style>
         /* Responsive table styles */
@@ -46,6 +49,7 @@ include("access_level.php");
         }
     </style>
 
+
 </head>
 
 <body>
@@ -58,27 +62,29 @@ include("access_level.php");
     <!--Hello <?php //echo $user_data['user_name'];
                 ?> -->
     <div id="box" class="container my-5">
-        <form name="form1" action="add_articles.php" method="post">
+        <form name="myForm" action="add_articles.php" method="post">
             <!-- All form fields start from here: -->
             <label>Article Name: </label>
-            <input type="text" name="article_name" autocomplete="off" required>
+            <input type="text" name="article_name" autocomplete="off" required minlength="3" maxlength="15" span class="error">
             <br><br>
             <label>Article Overview: </label>
-            <input type="text" name="article_overview" autocomplete="off" required>
+            <input type="text" name="article_overview" autocomplete="off" required minlength="3" maxlength="15" span class="error">
             <br><br>
             <label for="article_description">Article Description: </label>
-            <textarea id="article_description" name="article_description" rows="5" columns="10" required></textarea>
+            <br>
+            <textarea id="article_description" name="article_description" rows="5" columns="20" required minlength="3" maxlength="15" span class="error"></textarea>
             <br><br>
             <label>Article Author: </label>
-            <input type="text" name="article_author" autocomplete="off" required>
+            <input type="text" name="article_author" autocomplete="off" required minlength="3" maxlength="15" span class="error">
             <br><br>
             <!-- Buttons here below: -->
             <button type="submit" class="btn btn-primary" name="submit4">Submit</button>
             <button type="reset" class="btn btn-secondary m1-2" name="reset4">Clear</button>
             <br><br><br><br>
             <!-- Option to go back to browse: -->
-            <button><a href="display_articles.php">Changed Your Mind! Click here to go back to Main movies Page: </a></button>
+            <button><a href="display_articles.php">Changed Your Mind! Click here to go back to Main Page: </a></button>
         </form>
+        <div id="response"></div>
     </div>
 </body>
 

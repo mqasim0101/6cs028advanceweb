@@ -26,8 +26,8 @@ include("website_connect.php");
     <li><a href="signup_form.php">Register</a></li>
     <li><a href="dashboard.php">Dashboard</a></li>
   </ul> -->
-  <div class="container">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="row rows-cols-1 row-cols-md-2 g-4">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #6a1b9a;">
       <div class="container-fluid">
         <a class="navbar-brand" href="home.php">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,19 +65,18 @@ include("website_connect.php");
                 <li><a class="dropdown-item" href="login_form.php">Login</a></li>
                 <li><a class="dropdown-item" href="signup_form.php">Sign Up</a></li>
               </ul>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Remove Account</a>
-            </li>
           </ul>
-          <!-- Search bar Below -->
+        </div>
+      </div>
+    </nav>
+  </div>
+  <br>
+  <div><!-- Search bar Below -->
           <form class="d-flex" role="search" method="post" action="search.php">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit" name="submit_search">Search</button>
           </form>
         </div>
-      </div>
-    </nav>
-  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 

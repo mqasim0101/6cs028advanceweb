@@ -49,32 +49,33 @@ include("navigation_bar.php");
 <body>
 	<br><br>
 	<h1>Login</h1>
-	<br><br><br><br><br>
-	<div id="box">
+	<br><br>
+	<div class="card" style="width: 25rem;">
 		<!-- Login Form below with a post method: -->
 		<form action="login.php" method="post">
 			<!--  user name field: -->
-			<label for="user_name">User Name</label>
-			<input type="text" name="user_name" required>
-			<br><br>
+			<label for="user_name"  class="form-label">User Name</label>
+			<input type="text" class="form-control" name="user_name" required minlength="3" maxlength="15" span class="error">
+			<div id="usernameHelp" class="form-text">We'll never share your username with anyone else.</div>
+			<br>
 			<!-- password field: -->
-			<label for="password">Password</label>
-			<input type="password" name="password" required>
-			<br><br><br>
+			<label for="password"  class="form-label">Password</label>
+			<input type="password"  class="form-control" name="password" required minlength="3" maxlength="15" span class="error">
+			<br>
 			<label for="checkbox">Remember Username</label>
-			<input type="checkbox" name="checbox1" autocomplete="off">
+			<input type="checkbox"  class="form-label" name="checbox1" autocomplete="off">
 			<br><br><br>
 			<!-- Submit button here: -->
 			<button type="submit" class="btn btn-primary" name="submit1">Submit</button>
 			<!-- Reset button here: -->
 			<button type="reset" class="btn btn-secondary ml-2" name="reset1">Reset</button>
-			<br><br><br><br><br><br>
-			<!-- Let's add a sing up link here: -->
-			<button class="btn btn-success"><a href="signup_form.php">New to Website SingUp here: </button></a>
-			<br><br>
-			<button class="btn btn-danger"><a href="home.php">Head back to Main Page</a></button>
 		</form>
 	</div>
+	<br><br>
+	<!-- Let's add a sing up link here: -->
+	<button class="btn btn-success"><a href="signup_form.php">New to Website SingUp here: </button></a>
+	<br><br>
+	<button class="btn btn-danger"><a href="home.php">Head back to Main Page</a></button>
 	<br><br><br>
 </body>
 

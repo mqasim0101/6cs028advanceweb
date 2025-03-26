@@ -13,14 +13,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" || (isset($_POST['delete']))) {
         $result = mysqli_query($website_connect, $sql_delete);
         // Save the query:
         // Check if query worked:
-        if ($result) {
-            //echo "Record deleted successfully! ";
+        if ($result){
+            echo "Record deleted successfully! ";
             header("Location: manage_articles.php");
         } else {
             echo "Error Adding records" . mysqli_error($website_connect); // Error adding the require:
             die; // to stop the code from continuing:
         }
     }
+    mysqli_close($website_connect);
 }
 ?>
 <!Doctype html>

@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 //session_start();
 include_once("website_connect.php"); // this file inclusion will make access to database phpmyadmin for details:
 include("navigation_bar.php"); // this file included will make access to website navigation bar for user when in action:

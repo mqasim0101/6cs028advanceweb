@@ -52,25 +52,30 @@ include("website_connect.php");
 		<h1>Sign Up</h1>
 	</b>
 	<!-- divider class here: -->
-	<div>
-		<br><br><br><br><br><br>
-		<form class="my-5" action="signup.php" method="POST" enctype="multipart/form-data">
-			<!-- All the labels start from here: -->
-			<label for="user_name">User Name</label>
-			<input type="text" name="user_name" autocomplete="off" required>
-			<br><br>
-			<label for="password">Password</label>
-			<input type="password" name="password" autocomplete="off" required>
-			<br><br>
+	<div class="card" style="width: 25rem;">
+		<!-- signup Form below with a post method: -->
+		<form action="signup.php" method="post">
+			<!--  user name field: -->
+			<label for="user_name"  class="form-label">User Name</label>
+			<input type="text" class="form-control" name="user_name" required minlength="3" maxlength="15" span class="error">
+			<div id="usernameHelp" class="form-text">We'll never share your username with anyone else.</div>
+			<br>
+			<!-- password field: -->
+			<label for="password"  class="form-label">Password</label>
+			<input type="password"  class="form-control" name="password" required minlength="3" maxlength="15" span class="error">
+			<br>
+			<label for="checkbox">Remember Username</label>
+			<input type="checkbox"  class="form-label" name="checbox1" autocomplete="off">
+			<br><br><br>
 			<!-- Submit button here: -->
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary" name="submit1">Submit</button>
 			<!-- Reset button here: -->
-			<button type="reset" class="btn btn-secondary ml-2">Reset</button>
+			<button type="reset" class="btn btn-secondary ml-2" name="reset1">Reset</button>
 		</form>
 	</div>
-	<br><br><br><br><br>
+	<br><br><br>
 	<!-- Already Account\Login Option available: -->
-	<button class="btn btn-secondary m1-2"><b><a href="login_form.php">Already have an Account Login Here</a></b></button>
+	<button class="btn btn-outline-success"><b><a href="login_form.php">Already have an Account Login Here</a></b></button>
 	<br><br>
 	<button class="btn btn-outline-secondary"><a href="home.php">Back to the Main Page:</a></button>
 </body>

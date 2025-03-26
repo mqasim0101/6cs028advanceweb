@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 //session_start();
 include("website_connect.php");
 include("navigation_bar.php");
@@ -56,18 +57,18 @@ include("access_level.php");
 			<form id="form2" method="post" action="insert_query.php">
 				<!-- Let's add additional methods here: -->
 				<label for="user_contacted">Your Full User Name</label>
-				<input type="text" name="user_contacted" placeholder="Enter your full name" autocomplete="off" required>
+				<input type="text" name="user_contacted" placeholder="Enter your full name" autocomplete="off" required minlength="3" maxlength="15" span class="error">
 				<br><br>
 				<label for="query_or_question">What is Your Query About</label>
 				<br>
-				<input type="text" name="query_or_question" placeholder="issue, concerns" autocomplete="off" required>
+				<textarea id="query_or_question" name="query_or_question" rows="5" columns="10" required minlength="3" maxlength="15" span class="error"></textarea>
 				<br><br>
 				<label for="query_type">Query Type<label>
-				<input type="text" name="query_type" placeholder="urgent" autocomplete="off" required>
-				<!-- Submit button here: -->
-				<button type="submit" name="submit11" class="btn btn-outline-success">Submit</button>
-				<!-- Reset button here: -->
-				<button type="reset" class="btn btn-outline-danger">Reset</button>
+						<input type="text" name="query_type" placeholder="urgent" autocomplete="off" required minlength="3" maxlength="15" span class="error">
+						<!-- Submit button here: -->
+						<button type="submit" name="submit11" class="btn btn-outline-success">Submit</button>
+						<!-- Reset button here: -->
+						<button type="reset" class="btn btn-outline-danger">Reset</button>
 			</form>
 		</div>
 		<br><br><br><br>

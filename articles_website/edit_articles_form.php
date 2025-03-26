@@ -60,19 +60,19 @@ include("access_level.php");
         <form name="form3" action="edit_articles.php" method="post">
             <!-- All form fields start from here: -->
             <label>Article ID to update: </label>
-            <input type="text" name="id" autocomplete="off">
+            <input type="text" name="id" autocomplete="off" required>
             <br><br>
             <label>Article Name to update: </label>
-            <input type="text" name="article_name" autocomplete="off">
+            <input type="text" name="article_name" autocomplete="off" required minlength="3" maxlength="15" span class="error">
             <br><br>
             <label>Article Overview to update: </label>
-            <input type="text" name="article_overview" autocomplete="off">
+            <input type="text" name="article_overview" autocomplete="off" required minlength="3" maxlength="15" span class="error">
             <br><br>
             <label>Article Description to update: </label>
-            <input type="text" name="article_description" autocomplete="off">
+            <textarea id="article_description" name="article_description" rows="5" columns="10" required minlength="3" maxlength="15" span class="error"></textarea>
             <br><br>
             <label>Article Author to update: </label>
-            <input type="text" name="article_author" autocomplete="off">
+            <input type="text" name="article_author" autocomplete="off" required minlength="3" maxlength="15" span class="error">
             <br><br>
             <!-- Buttons here below: -->
             <button type="submit" class="btn btn-primary" name="update">Update</button>
