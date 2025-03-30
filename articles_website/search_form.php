@@ -1,6 +1,5 @@
 <?php
      require("website_connect.php"); // to connect to database:
-     include("locations.php");
 ?>
 
 
@@ -28,8 +27,5 @@
 			      <button type="submit" name="submit_search" class="btn btn-success">Search</button>
 		      </form>
 	     </div>
-	     <br><br>
-	     <button id="" class="btn btn-outline-warning"><a href="navigation_bar.php">Back to Navigation Bar</a></button>
-	     <button id="" class="btn btn-outline-danger"><a href="home.php">Home</a></button>
 	 </body>
 </html>

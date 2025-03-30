@@ -25,7 +25,7 @@
             if(isset($_POST['submit_search'])){
                 $search = mysqli_real_escape_string($website_connect, $_POST['search']);
                 //$query = "select * from `articles` where id like '%$search%' or article_name like '%$search%'";
-                $sql = "select * from `searchbar` where article_name like '%$search%'";
+                $sql = "select * from `articles` where article_name like '%$search%'";
                 $result = mysqli_query($website_connect, $sql);
                 $result_check = mysqli_num_rows($result);
                 // check if executed:
@@ -40,9 +40,12 @@
                         <td> '.$row['date'].'</td>
                         </tr>
                         </tbody>';
+
                     }
+                    //header("Location: home.php");
                 }else{
                     echo "<h2 class=text-danger>Data Not Found! </h2>";
+                    echo "Not found";
                     header("Location: home.php");
                 }
             }

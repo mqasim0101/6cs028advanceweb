@@ -1,8 +1,9 @@
 <?php
 //error_reporting(0);
 session_start();
-require("website_connect.php");
+include("website_connect.php");
 include("navigation_bar.php");
+//include_once("access_level.php");
 ?>
 <!Doctype html>
 <html>

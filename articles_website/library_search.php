@@ -1,15 +1,18 @@
 <?php
 // library_finder.php
-class LibraryFinder {
+class LibraryFinder
+{
     private $apiKey;
     private $apiHost;
 
-    public function __construct($apiKey, $apiHost) {
+    public function __construct($apiKey, $apiHost)
+    {
         $this->apiKey = $apiKey;
         $this->apiHost = $apiHost;
     }
 
-    public function findLibraries() {
+    public function findLibraries()
+    {
         // London coordinates
         $lat = 51.5074;
         $lon = -0.1278;
@@ -66,7 +69,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'find_libraries') {
 
     // Create library finder
     $libraryFinder = new LibraryFinder($apiKey, $apiHost);
-    
+
     // Output libraries as JSON
     header('Content-Type: application/json');
     echo $libraryFinder->findLibraries();
@@ -78,6 +81,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'find_libraries') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>London Libraries Map</title>
@@ -87,25 +91,28 @@ if (isset($_GET['action']) && $_GET['action'] == 'find_libraries') {
             overflow-y: auto;
             margin-top: 10px;
         }
+
         .library-item {
             padding: 5px;
             border-bottom: 1px solid #eee;
             cursor: pointer;
         }
+
         .library-item:hover {
             background-color: #f0f0f0;
         }
     </style>
 </head>
+
 <body>
     <!-- Your existing embedded map -->
-    <iframe 
+    <iframe
         id="londonMap"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317716.364741452!2d-0.10159865000000001!3d51.52864165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1721674778102!5m2!1sen!2suk" 
-        width="600" 
-        height="450" 
-        style="border:0;" 
-        allowfullscreen="" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317716.364741452!2d-0.10159865000000001!3d51.52864165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1721674778102!5m2!1sen!2suk"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
         loading="lazy">
     </iframe>
 
@@ -138,7 +145,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'find_libraries') {
                                 <strong>${library.name || 'Unnamed Library'}</strong><br>
                                 ${library.address || 'Address not available'}
                             `;
-                            
+
                             // Optional: Add click to highlight on map
                             libraryItem.addEventListener('click', () => {
                                 // Note: This is a placeholder. Actual map highlighting 
@@ -154,10 +161,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'find_libraries') {
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    document.getElementById('libraryList').innerHTML = 
+                    document.getElementById('libraryList').innerHTML =
                         `<p>Error fetching libraries: ${error.message}</p>`;
                 });
         });
     </script>
 </body>
+
 </html>

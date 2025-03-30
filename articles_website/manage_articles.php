@@ -44,6 +44,27 @@ include("navigation_bar.php"); // to connect it to the navigation bar:
                     float: left;
                     font-weight: bold;
                 }
+
+                /* Tredning articles styling */
+                #trending-container {
+                    margin: 20px 0;
+                    padding: 10px;
+                    background-color: #f5f5f5;
+                    border-radius: 5px;
+                }
+
+                #trending-container h3 {
+                    margin-top: 0;
+                }
+
+                #trending-container ul {
+                    padding-left: 20px;
+                }
+
+                .view-count {
+                    color: #777;
+                    font-size: 0.9em;
+                }
             }
         </style>
     </head>
@@ -98,6 +119,10 @@ include("navigation_bar.php"); // to connect it to the navigation bar:
         <button class="btn btn-outline-danger"><a href="delete_articles_form.php">Delete Articles</a></button>
         <br><br>
         <button class="btn btn-outline-secondary"><a href="home.php">Back to the Main Page:</a></button>
+        <!-- Include the JavaScript file -->
+        <script src="js/trend.js"></script>
+        <!-- Bootstrap 5 JS (Optional, but recommended) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 
     </html>
