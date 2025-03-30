@@ -1,8 +1,6 @@
 <?php
-session_start();
 include("website_connect.php");
 include("navigation_bar.php");
-//include("webapi.php");
 include("search_form.php");
 include("advance_search_form.php");
 ?>
