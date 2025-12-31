@@ -6,10 +6,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <!-- -->
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/weather">weather map</a>
-        </li>
+        <!---->
+        <!----> 
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/pages/home">Home</a>
         </li>
@@ -23,13 +21,6 @@
         <li class="nav-item">
           <a class="nav-link" href="/news/new">Create news</a>
         </li>
-        <!--
-        <li class="nav-item">
-          <a class="nav-link" href="/news/update">Update news</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/news/delete">Delete news</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="/pages/about">About</a>
         </li>
@@ -37,13 +28,13 @@
           <a class="nav-link" href="/pages/contactus">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/account/login">Login</a>
+          <a class="nav-link" href="/auth/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/account/signup">Signup</a>
+          <a class="nav-link" href="/auth/register">Signup</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/account/account_info">Account Info</a>
+          <a class="nav-link" href="/auth/dashboard">Account Info</a>
         </li>
       </ul>
       <br><br>

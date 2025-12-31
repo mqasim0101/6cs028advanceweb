@@ -1,5 +1,5 @@
 <h2><?= esc($title) ?></h2>
-
+<!-- <img src="qrc.png" alt="QR Code" width="200"> -->
 <?php if ($news_list !== []): ?>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -24,3 +24,4 @@
     <p>Unable to find any news for you.</p>
 
 <?php endif ?>
+
