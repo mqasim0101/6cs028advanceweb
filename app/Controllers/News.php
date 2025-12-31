@@ -77,19 +77,5 @@ class News extends BaseController
             . view('news/success')
             . view('templates/footer');
     }
-    public function update()
-    {
-        echo "Welcome to Editing News";
-        return view('templates/header')
-            . view('news/update')
-            . view('templates/footer');
-    }
-    public function delete()
-    {
-        echo "Here you can remove news items";
-        return view('templates/header')
-            . view('news/delete')
-            . view('templates/footer');
-    }
 }
 ?>
